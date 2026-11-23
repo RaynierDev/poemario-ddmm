@@ -1,0 +1,531 @@
+
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Después de muchas muertes — Raynier Garrido (@soyrayniergt)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            kraft: {
+              light: '#f4ede1',
+              DEFAULT: '#dfd1bc',
+              dark: '#c4b092',
+              deep: '#9e8767',
+            },
+            ink: {
+              DEFAULT: '#1d1a16',
+              soft: '#3d372f',
+              muted: '#695f52',
+            },
+            collage: {
+              ochre: '#d47c24',
+              ember: '#b83c24',
+              sky: '#2c78b8',
+            }
+          },
+          fontFamily: {
+            serif: ['"Libre Baskerville"', 'Georgia', 'serif'],
+            display: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            mono: ['"Space Mono"', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #dfd1bc;
+      color: #1d1a16;
+      background-image:
+        radial-gradient(rgba(130, 105, 72, 0.14) 1px, transparent 0),
+        radial-gradient(rgba(80, 62, 40, 0.08) 1px, transparent 0),
+        linear-gradient(180deg, rgba(255, 248, 236, 0.38) 0%, rgba(185, 162, 128, 0.28) 100%);
+      background-size: 26px 26px, 19px 19px, 100% 100%;
+      background-position: 0 0, 9px 11px, 0 0;
+    }
+
+    .paper-grain::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 40;
+      opacity: 0.04;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    }
+
+    .torn-top {
+      clip-path: polygon(
+        0% 10px, 4% 3px, 9% 11px, 15% 2px, 21% 9px, 27% 1px, 33% 10px,
+        39% 3px, 45% 9px, 51% 2px, 57% 11px, 63% 3px, 69% 9px, 75% 1px,
+        81% 10px, 87% 3px, 93% 9px, 97% 2px, 100% 8px, 100% 100%, 0% 100%
+      );
+    }
+
+    .torn-bottom {
+      clip-path: polygon(
+        0% 0%, 100% 0%, 100% calc(100% - 8px), 96% calc(100% - 2px),
+        90% calc(100% - 10px), 84% calc(100% - 3px), 78% calc(100% - 9px),
+        72% calc(100% - 1px), 66% calc(100% - 10px), 60% calc(100% - 3px),
+        54% calc(100% - 9px), 48% calc(100% - 2px), 42% calc(100% - 11px),
+        36% calc(100% - 3px), 30% calc(100% - 9px), 24% calc(100% - 1px),
+        18% calc(100% - 10px), 12% calc(100% - 3px), 6% calc(100% - 9px),
+        0% calc(100% - 3px)
+      );
+    }
+
+    .book-shadow {
+      box-shadow:
+        -12px 18px 34px rgba(24, 19, 13, 0.34),
+        -3px 4px 10px rgba(24, 19, 13, 0.22),
+        inset 3px 0 6px rgba(255, 255, 255, 0.25),
+        inset -2px 0 5px rgba(0, 0, 0, 0.18);
+    }
+
+    .book-spine {
+      background: linear-gradient(
+        90deg,
+        rgba(35, 27, 18, 0.34) 0%,
+        rgba(255, 255, 255, 0.24) 3%,
+        rgba(35, 27, 18, 0.14) 6%,
+        transparent 11%
+      );
+    }
+
+    .collage-strip-1 {
+      clip-path: polygon(6% 0%, 92% 0%, 98% 18%, 89% 38%, 96% 59%, 88% 79%, 94% 100%, 4% 100%, 11% 76%, 2% 52%, 10% 26%);
+    }
+
+    .collage-strip-2 {
+      clip-path: polygon(8% 0%, 95% 0%, 88% 22%, 97% 46%, 89% 71%, 94% 100%, 5% 100%, 12% 74%, 3% 48%, 11% 21%);
+    }
+  </style>
+</head>
+<body class="paper-grain font-serif antialiased selection:bg-collage-ochre/30 selection:text-ink">
+
+  <!-- Barra de navegación superior -->
+  <header class="sticky top-0 z-30 bg-kraft/90 backdrop-blur-md border-b border-ink/15">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-3">
+      <a href="#inicio" class="flex items-center gap-2.5 group min-w-0">
+        <span class="font-mono text-xs tracking-widest uppercase px-2 py-0.5 border border-ink/30 bg-kraft-light/70 text-ink-soft group-hover:bg-ink group-hover:text-kraft-light transition-colors shrink-0">DDMM</span>
+        <span class="font-display text-lg sm:text-xl font-semibold tracking-tight text-ink truncate">Después de muchas muertes</span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-6 text-sm text-ink-soft">
+        <a href="#sobre-el-libro" class="hover:text-ink transition-colors">Sobre el libro</a>
+        <a href="#autor" class="hover:text-ink transition-colors">El autor</a>
+        <a href="#equipo" class="hover:text-ink transition-colors">Equipo</a>
+        <a href="#preventa" class="hover:text-ink transition-colors">Preventa 21 dic</a>
+      </nav>
+
+      <!-- Acceso directo siempre visible a @soyrayniergt -->
+      <a href="https://instagram.com/soyrayniergt" target="_blank" rel="noopener noreferrer"
+         class="inline-flex items-center gap-2 px-3.5 py-1.5 text-xs sm:text-sm font-mono bg-ink text-kraft-light hover:bg-collage-ember transition-colors shadow-sm shrink-0"
+         aria-label="Seguir a Raynier Garrido en Instagram @soyrayniergt">
+        <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+        </svg>
+        <span class="font-bold tracking-tight">@soyrayniergt</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero Principal -->
+  <section id="inicio" class="relative pt-10 pb-16 sm:pt-14 sm:pb-24 px-4 sm:px-6 overflow-hidden">
+    <div class="max-w-6xl mx-auto">
+      <!-- Encabezado editorial superior -->
+      <div class="text-center mb-10 sm:mb-14">
+        <p class="font-mono text-xs tracking-[0.28em] uppercase text-ink-muted mb-3">
+          Poemario debut · Primera edición limitada
+        </p>
+        <h1 class="font-serif text-3xl sm:text-5xl md:text-6xl font-normal tracking-tight text-ink uppercase leading-tight">
+          Después de muchas muertes
+        </h1>
+        <p class="mt-3 font-display italic text-xl sm:text-2xl text-ink-soft">
+          Un libro de <span class="not-italic font-semibold text-ink">Raynier Garrido</span>
+        </p>
+      </div>
+
+      <!-- Grid Portada + Presentación y @soyrayniergt -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+
+        <!-- Portada real del libro físico -->
+        <div class="lg:col-span-5 flex justify-center">
+          <div class="relative group perspective-1000">
+            <div class="w-[290px] sm:w-[330px] aspect-[1/1.44] bg-[#e3d3bc] book-shadow relative overflow-hidden border border-ink/20 transition-transform duration-500 group-hover:-translate-y-1.5">
+              <div class="absolute inset-0 book-spine z-20 pointer-events-none"></div>
+
+              <img 
+                src="../cubierta-final.jpg" 
+                alt="Portada del poemario Después de muchas muertes de Raynier Garrido" 
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="w-[82%] h-5 mx-auto bg-ink/20 blur-md rounded-full -mt-1"></div>
+          </div>
+        </div>
+
+        <!-- Narrativa del poemario + Preventa 21 Dic + Instagram -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex flex-wrap items-center gap-2 px-3.5 py-1.5 bg-kraft-light/85 border border-ink/20 text-xs font-mono uppercase tracking-wider text-ink-soft">
+            <span class="w-2 h-2 rounded-full bg-collage-ember animate-pulse"></span>
+            <span>Preventa oficial: 21 de diciembre de 2026</span>
+          </div>
+
+          <h2 class="font-display text-3xl sm:text-4xl font-semibold text-ink leading-snug">
+            Sinopsis.
+          </h2>
+
+          <p class="text-ink-soft text-base sm:text-lg leading-relaxed">
+            <em>Después de muchas muertes</em> (DDMM) es el primer poemario de <strong>Raynier Garrido</strong>: es un desplazamiento desde la celebración de lo vital y lo 
+          natural, atraviesa el duelo y la desolación, y confluye en un renacimiento simbólico.  A través de su joven voz y 
+con la valentía de quien  asume la poesía desde la experimentación, leemos a Raynier Garrido 
+entre sonetos, sextinas, décimas espinelas, haikus y versos libres que desembocan en el amor, 
+la memoria, la denuncia ecológica y el homenaje a las culturas de Guatemala y Ecuador. El 
+diseño de arte, a través de Verso Lidio, de la mano de la artista visual y correctora Jhensy 
+Lucena, complementa el recorrido lírico invitando al lector a reconocer en cada caída la 
+ofrenda de una nueva apertura hacia la vida.
+          </p>
+
+          <!-- Tarjeta destacada de Instagram @soyrayniergt -->
+          <div class="p-4 sm:p-5 bg-kraft-light/90 border-l-4 border-collage-ember shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div>
+              <p class="font-mono text-[11px] uppercase tracking-widest text-ink-muted">Sigue el proceso, adelantos y avisos en Instagram</p>
+              <p class="font-serif text-lg sm:text-xl font-bold text-ink mt-0.5">@soyrayniergt</p>
+              <p class="text-xs sm:text-sm text-ink-soft mt-0.5">Lecturas, detrás de cámaras de la edición y apertura de preventa.</p>
+            </div>
+            <a href="https://instagram.com/soyrayniergt" target="_blank" rel="noopener noreferrer"
+               class="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-ink text-kraft-light font-mono text-xs uppercase tracking-wider hover:bg-collage-ember transition-colors shrink-0">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+              <span>Ir a @soyrayniergt</span>
+            </a>
+          </div>
+
+          <!-- Botones de acción -->
+          <div class="pt-1 flex flex-wrap items-center gap-3.5">
+            <a href="https://wa.me/50258739407?text=Hola%20Raynier%2C%20me%20gustar%C3%ADa%20apartar%20mi%20cupo%20para%20la%20preventa%20de%20Despu%C3%A9s%20de%20muchas%20muertes%20(21%20de%20diciembre)."
+               target="_blank" rel="noopener noreferrer"
+               class="inline-flex items-center gap-2.5 px-6 py-3.5 bg-collage-ember text-kraft-light font-mono text-xs sm:text-sm uppercase tracking-wider hover:bg-ink transition-colors shadow-md">
+              <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+              </svg>
+              <span>Apartar cupo para la preventa</span>
+            </a>
+            <a href="#preventa"
+               class="px-5 py-3.5 border border-ink/35 bg-kraft-light/65 text-ink font-mono text-xs sm:text-sm uppercase tracking-wider hover:bg-kraft-light transition-colors">
+              Detalles · 21 de diciembre
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección Sobre el Poemario -->
+  <section id="sobre-el-libro" class="py-16 sm:py-20 px-4 sm:px-6 bg-kraft-light/85 torn-top torn-bottom border-y border-ink/10">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="font-mono text-xs uppercase tracking-[0.25em] text-ink-muted">La obra</span>
+        <h2 class="font-display text-3xl sm:text-4xl font-semibold text-ink mt-2">¿De qué trata <em>Después de muchas muertes</em>?</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+        <article class="p-6 bg-kraft/45 border border-ink/15">
+          <p class="font-mono text-xs text-collage-ember uppercase tracking-widest mb-2">01 · El concepto</p>
+          <h3 class="font-display text-2xl font-semibold text-ink mb-2">Morir en vida para continuar</h3>
+          <p class="text-sm text-ink-soft leading-relaxed">
+            No habla únicamente del final físico, sino de todas las versiones de nosotros mismos que dejamos atrás: amores que terminan, etapas que se cierran, ausencias que marcan y la fuerza necesaria para seguir escribiendo después.
+          </p>
+        </article>
+
+        <article class="p-6 bg-kraft/45 border border-ink/15">
+          <p class="font-mono text-xs text-collage-ochre uppercase tracking-widest mb-2">02 · La palabra</p>
+          <h3 class="font-display text-2xl font-semibold text-ink mb-2">Métrica clásica y verso libre</h3>
+          <p class="text-sm text-ink-soft leading-relaxed">
+            Los poemas transitan entre estructuras tradicionales —como sonetos, décimas y romances— y la libertad expresiva del verso contemporáneo y el <em>spoken word</em>, buscando musicalidad y honestidad emocional.
+          </p>
+        </article>
+
+        <article class="p-6 bg-kraft/45 border border-ink/15">
+          <p class="font-mono text-xs text-collage-sky uppercase tracking-widest mb-2">03 · El objeto artístico</p>
+          <h3 class="font-display text-2xl font-semibold text-ink mb-2">Collage analógico e ilustración</h3>
+          <p class="text-sm text-ink-soft leading-relaxed">
+            Concebido como una pieza artesanal, el libro reúne recortes rasgados a mano, texturas de papel, 9 ilustraciones inéditas y un prólogo que abre las puertas a este universo poético.
+          </p>
+        </article>
+      </div>
+
+      <!-- Cita poética destacada -->
+      <blockquote class="max-w-3xl mx-auto p-6 sm:p-8 bg-kraft/60 border border-ink/15 text-center relative">
+        <p class="font-display italic text-2xl sm:text-3xl text-ink leading-relaxed">
+          «Hagamos hoy canción de nuestras vidas
+para al menos tener tiempos peores 
+y escombros de los que broten las flores.
+.»
+        </p>
+        <footer class="mt-4 font-mono text-xs uppercase tracking-widest text-ink-muted">
+          — Raynier Garrido · <a href="https://instagram.com/soyrayniergt" target="_blank" rel="noopener noreferrer" class="underline hover:text-collage-ember">@soyrayniergt</a>
+        </footer>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- Sección Sobre el Autor con enlace prominente a @soyrayniergt -->
+  <section id="autor" class="py-16 sm:py-20 px-4 sm:px-6">
+    <div class="max-w-4xl mx-auto bg-kraft-light/85 border border-ink/20 p-6 sm:p-10 shadow-sm">
+      <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+        <div class="space-y-3 max-w-2xl">
+          <span class="font-mono text-xs uppercase tracking-[0.25em] text-collage-ember">Sobre el autor</span>
+          <h2 class="font-display text-3xl sm:text-4xl font-semibold text-ink">Raynier Garrido</h2>
+          <p class="text-sm sm:text-base text-ink-soft leading-relaxed">
+            Poeta y artista escénico guatemalteco. Su trabajo explora el equilibrio entre la poesía métrica y el verso libre, participando activamente en escenarios de poesía oral y <em>poetry slam</em>. <em>Después de muchas muertes</em> marca su debut editorial como autor independiente.
+          </p>
+          <p class="text-sm text-ink-soft">
+            Encuéntralo en Instagram como <a href="https://instagram.com/soyrayniergt" target="_blank" rel="noopener noreferrer" class="font-mono font-bold text-ink underline decoration-collage-ember underline-offset-4 hover:text-collage-ember">@soyrayniergt</a> para conocer fechas de recitales, fragmentos inéditos y novedades del lanzamiento.
+          </p>
+        </div>
+
+        <div class="w-full md:w-auto shrink-0">
+          <a href="https://instagram.com/soyrayniergt" target="_blank" rel="noopener noreferrer"
+             class="w-full md:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3.5 bg-ink text-kraft-light font-mono text-xs uppercase tracking-wider hover:bg-collage-ember transition-colors">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+            <span>Seguir @soyrayniergt</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Equipo Creativo -->
+  <section id="equipo" class="py-16 sm:py-20 px-4 sm:px-6 bg-kraft-light/85 torn-top torn-bottom border-y border-ink/10">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center max-w-xl mx-auto mb-12">
+        <span class="font-mono text-xs uppercase tracking-[0.25em] text-ink-muted">Créditos de la edición</span>
+        <h2 class="font-display text-3xl sm:text-4xl font-semibold text-ink mt-2">Manos detrás del libro</h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div class="p-5 bg-kraft/40 border border-ink/15 flex flex-col justify-between">
+          <div>
+            <span class="font-mono text-[11px] uppercase tracking-wider text-collage-ember">Portada · Collages · Corrección</span>
+            <h3 class="font-display text-2xl font-semibold text-ink mt-1.5">Jhensy Lucena</h3>
+            <p class="text-xs text-ink-soft mt-2 leading-relaxed">
+              Creación de los collages analógicos, arte de portada, contraportada y corrección editorial.
+            </p>
+          </div>
+          <a href="https://instagram.com/verso.lidio" target="_blank" rel="noopener noreferrer"
+             class="mt-4 inline-block font-mono text-xs text-ink underline underline-offset-4 hover:text-collage-ember">
+            @verso.lidio →
+          </a>
+        </div>
+
+        <div class="p-5 bg-kraft/40 border border-ink/15 flex flex-col justify-between">
+          <div>
+            <span class="font-mono text-[11px] uppercase tracking-wider text-collage-ochre">Ilustraciones interiores</span>
+            <h3 class="font-display text-2xl font-semibold text-ink mt-1.5">Jeremie</h3>
+            <p class="text-xs text-ink-soft mt-2 leading-relaxed">
+              Autor de las nueve ilustraciones originales que dialogan con los poemas a lo largo de la obra.
+            </p>
+          </div>
+          <a href="https://instagram.com/jeremie.o" target="_blank" rel="noopener noreferrer"
+             class="mt-4 inline-block font-mono text-xs text-ink underline underline-offset-4 hover:text-collage-ember">
+            @jeremie.o →
+          </a>
+        </div>
+
+        <div class="p-5 bg-kraft/40 border border-ink/15 flex flex-col justify-between">
+          <div>
+            <span class="font-mono text-[11px] uppercase tracking-wider text-collage-sky">Prólogo</span>
+            <h3 class="font-display text-2xl font-semibold text-ink mt-1.5">Flor Monzón</h3>
+            <p class="text-xs text-ink-soft mt-2 leading-relaxed">
+              Poeta encargada de escribir las palabras introductorias que reciben al lector.
+            </p>
+          </div>
+          <a href="https://instagram.com/flormonzongt" target="_blank" rel="noopener noreferrer"
+             class="mt-4 inline-block font-mono text-xs text-ink underline underline-offset-4 hover:text-collage-ember">
+            @flormonzongt →
+          </a>
+        </div>
+
+        <div class="p-5 bg-kraft/40 border border-ink/15 flex flex-col justify-between">
+          <div>
+            <span class="font-mono text-[11px] uppercase tracking-wider text-ink-muted">Diagramación</span>
+            <h3 class="font-display text-2xl font-semibold text-ink mt-1.5">Paola</h3>
+            <p class="text-xs text-ink-soft mt-2 leading-relaxed">
+              Diseño editorial, composición tipográfica y maquetación de interiores para impresión.
+            </p>
+          </div>
+          <a href="https://instagram.com/paolasoe_" target="_blank" rel="noopener noreferrer"
+             class="mt-4 inline-block font-mono text-xs text-ink underline underline-offset-4 hover:text-collage-ember">
+            @paolasoe_ →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección Preventa: 21 de diciembre de 2026 -->
+  <section id="preventa" class="py-16 sm:py-24 px-4 sm:px-6">
+    <div class="max-w-3xl mx-auto text-center">
+      <div class="p-8 sm:p-12 bg-kraft-light border border-ink/25 shadow-lg relative">
+        <span class="font-mono text-xs uppercase tracking-[0.28em] text-collage-ember">Primera edición · 200 ejemplares</span>
+        <h2 class="font-display text-3xl sm:text-5xl font-semibold text-ink mt-3">
+          La preventa inicia el 21 de diciembre
+        </h2>
+        <p class="mt-4 text-sm sm:text-base text-ink-soft max-w-xl mx-auto leading-relaxed">
+          A partir del <strong>21 de diciembre de 2026</strong> podrás asegurar tu ejemplar de la primera edición limitada de <em>Después de muchas muertes</em>. El lanzamiento oficial será el <strong>5 de febrero de 2027</strong>.
+        </p>
+
+        <!-- Cuenta regresiva hacia el 21 de diciembre de 2026 -->
+        <div class="mt-8 grid grid-cols-4 gap-2.5 sm:gap-4 max-w-md mx-auto">
+          <div class="p-3 bg-kraft/55 border border-ink/15">
+            <span id="cd-days" class="block font-display text-2xl sm:text-4xl font-bold text-ink">--</span>
+            <span class="font-mono text-[10px] uppercase tracking-widest text-ink-muted">Días</span>
+          </div>
+          <div class="p-3 bg-kraft/55 border border-ink/15">
+            <span id="cd-hours" class="block font-display text-2xl sm:text-4xl font-bold text-ink">--</span>
+            <span class="font-mono text-[10px] uppercase tracking-widest text-ink-muted">Horas</span>
+          </div>
+          <div class="p-3 bg-kraft/55 border border-ink/15">
+            <span id="cd-mins" class="block font-display text-2xl sm:text-4xl font-bold text-ink">--</span>
+            <span class="font-mono text-[10px] uppercase tracking-widest text-ink-muted">Min</span>
+          </div>
+          <div class="p-3 bg-kraft/55 border border-ink/15">
+            <span id="cd-secs" class="block font-display text-2xl sm:text-4xl font-bold text-ink">--</span>
+            <span class="font-mono text-[10px] uppercase tracking-widest text-ink-muted">Seg</span>
+          </div>
+        </div>
+
+        <!-- Botón principal de WhatsApp + Recordatorio + Instagram -->
+        <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3.5">
+          <a href="https://wa.me/50258739407?text=Hola%20Raynier%2C%20me%20gustar%C3%ADa%20apartar%20mi%20cupo%20para%20la%20preventa%20de%20Despu%C3%A9s%20de%20muchas%20muertes%20(21%20de%20diciembre)."
+             target="_blank" rel="noopener noreferrer"
+             class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3.5 bg-collage-ember text-kraft-light font-mono text-xs uppercase tracking-wider hover:bg-ink transition-colors shadow-md">
+            <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+            </svg>
+            <span>Apartar cupo para la preventa</span>
+          </a>
+
+          
+
+          <a href="https://instagram.com/soyrayniergt" target="_blank" rel="noopener noreferrer"
+             class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3.5 border border-ink/35 bg-kraft/45 text-ink font-mono text-xs uppercase tracking-wider hover:bg-kraft transition-colors">
+            <span>@soyrayniergt</span>
+          </a>
+        </div>
+        <p class="mt-4 font-mono text-[11px] text-ink-muted">
+          WhatsApp directo Guatemala: +502 5873 9407
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Botón flotante discreto en esquina inferior derecha para Instagram -->
+  <a href="https://instagram.com/soyrayniergt" target="_blank" rel="noopener noreferrer"
+     class="fixed bottom-4 right-4 z-30 inline-flex items-center gap-2 px-3.5 py-2 bg-ink/95 text-kraft-light border border-kraft-light/20 shadow-lg font-mono text-xs hover:bg-collage-ember transition-colors"
+     title="Instagram de Raynier Garrido">
+    <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+    </svg>
+    <span>@soyrayniergt</span>
+  </a>
+
+  <!-- Footer -->
+  <footer class="border-t border-ink/15 py-10 px-4 sm:px-6 text-center bg-kraft-dark/25">
+    <div class="max-w-4xl mx-auto space-y-2.5">
+      <p class="font-display italic text-xl text-ink">Después de muchas muertes</p>
+      <p class="font-mono text-xs text-ink-soft">
+        Raynier Garrido · Instagram:
+        <a href="https://instagram.com/soyrayniergt" target="_blank" rel="noopener noreferrer" class="font-bold underline hover:text-collage-ember">@soyrayniergt</a>
+        · WhatsApp:
+        <a href="https://wa.me/50258739407" target="_blank" rel="noopener noreferrer" class="font-bold underline hover:text-collage-ember">+502 5873 9407</a>
+      </p>
+      <p class="font-mono text-[11px] text-ink-muted">
+        Preventa: 21 de diciembre de 2026 · Lanzamiento oficial: 5 de febrero de 2027 · Guatemala
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    // Cuenta regresiva hacia el 21 de diciembre de 2026 (inicio de preventa)
+    const presaleDate = new Date("2026-12-21T00:00:00-06:00").getTime();
+
+    function updateCountdown() {
+      const now = Date.now();
+      const diff = presaleDate - now;
+
+      if (diff <= 0) {
+        document.getElementById("cd-days").textContent = "00";
+        document.getElementById("cd-hours").textContent = "00";
+        document.getElementById("cd-mins").textContent = "00";
+        document.getElementById("cd-secs").textContent = "00";
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const mins = Math.floor((diff / 1000 / 60) % 60);
+      const secs = Math.floor((diff / 1000) % 60);
+
+      document.getElementById("cd-days").textContent = String(days).padStart(2, "0");
+      document.getElementById("cd-hours").textContent = String(hours).padStart(2, "0");
+      document.getElementById("cd-mins").textContent = String(mins).padStart(2, "0");
+      document.getElementById("cd-secs").textContent = String(secs).padStart(2, "0");
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    // Descarga de archivo .ics para agendar el inicio de preventa el 21 de diciembre
+    function downloadCalendarReminder() {
+      const icsContent = [
+        "BEGIN:VCALENDAR",
+        "VERSION:2.0",
+        "PRODID:-//Raynier Garrido//Despues de muchas muertes//ES",
+        "BEGIN:VEVENT",
+        "DTSTART:20261221T150000Z",
+        "DTEND:20261221T160000Z",
+        "SUMMARY:Inicio de Preventa — Después de muchas muertes (Raynier Garrido)",
+        "DESCRIPTION:Hoy inicia la preventa oficial del poemario Después de muchas muertes (DDMM) de Raynier Garrido. Apartar cupo por WhatsApp: https://wa.me/50258739407 o Instagram: https://instagram.com/soyrayniergt",
+        "URL:https://wa.me/50258739407",
+        "END:VEVENT",
+        "END:VCALENDAR"
+      ].join("\r\n");
+
+      const blob = new Blob([icsContent], { type: "text/calendar;charset=utf-8" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "Preventa-Despues-de-muchas-muertes.ics";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }
+  </script>
+</body>
+</html>
+
+```
